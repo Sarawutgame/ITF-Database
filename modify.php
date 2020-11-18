@@ -24,7 +24,6 @@ $id = $_GET['ID'];
 $query = "SELECT * FROM guestbook WHERE id = '$id' ";
 $Result = mysqli_fetch_array($res);
 
-mysqli_close($conn);
 ?>
 
 <h1>ฟอร์มแก้ไข/ปรับปรุงข้อมูล</h1>
@@ -37,5 +36,8 @@ mysqli_close($conn);
     <input type="text" name = "link" id="idLink" placeholder="Enter Link" required value="<?php echo $Result['Link'];?>"> <br><br>
     <input type="submit" id="commentBtn">
   </form> 
+  <?php
+  mysqli_close($conn);
+  ?>
 </body>
 </html>
