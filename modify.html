@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add data</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-8">
+        <h4 class="page-header">Name</h4>
+        <form role="form" action = "update.php" method = "post" id="CommentForm">
+            <div class="form-group float-label-control">
+                <label for="">Enter Name Here</label>
+                <input class="form-control" name ="name" id="idName" placeholder="Name">
+            </div>
+            <h4 class="page-header">Comment ^ ^</h4>
+            <div class="form-group float-label-control">
+                <label for="">Please Comment</label>
+                <textarea rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1"></textarea>
+            </div>
+            <h4 class="page-header">Link</h4>
+            <div class="form-group float-label-control">
+                <label for="">Please Insert Link</label>
+                <input class="form-control" name="link" id="idLink" placeholder="Link" rows="1">
+            </div>
+          <input type="submit" id="commentBtn">
+        </form>
+    </div>
+  </div>
+</body>
+</html>
