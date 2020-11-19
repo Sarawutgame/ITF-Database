@@ -34,17 +34,17 @@ $Result = mysqli_fetch_array($res);
           <form role="form" action = "update.php" method = "post" id="CommentForm">
               <div class="form-group float-label-control">
                   <label for="">Enter Name Here</label>
-                  <input class="form-control" name ="name" id="idName" placeholder="Name">
+                  <input class="form-control" name ="name" id="idName" placeholder="Name" required value="<?php echo $Result['Name'];?>">
               </div>
               <h4 class="page-header">Comment ^ ^</h4>
               <div class="form-group float-label-control">
                   <label for="">Please Comment</label>
-                  <textarea rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1"></textarea>
+                  <textarea rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1" required value="<?php echo $Result['Comment'];?>"></textarea>
               </div>
               <h4 class="page-header">Link</h4>
               <div class="form-group float-label-control">
                   <label for="">Please Insert Link</label>
-                  <input class="form-control" name="link" id="idLink" placeholder="Link" rows="1">
+                  <input class="form-control" name="link" id="idLink" placeholder="Link" rows="1" required value="<?php echo $Result['Link'];?>">
               </div>
             <input type="submit" id="btn btn-outline-warning">
           </form>
