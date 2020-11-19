@@ -21,7 +21,7 @@ if (mysqli_connect_errno($conn))
 
 $id = $_GET['id'];
 echo $id;
-$res = mysqli_query($conn, "SELECT * FROM guestbook WHERE ID = $id");   
+$res = mysqli_query($conn, "SELECT * FROM guestbook WHERE ID = $id");
 $Result = mysqli_fetch_array($res);
 
 ?>
@@ -38,7 +38,7 @@ $Result = mysqli_fetch_array($res);
               <h4 class="page-header">Comment ^ ^</h4>
               <div class="form-group float-label-control">
                   <label for="">Please Comment</label>
-                  <textarea rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1" required value="<?php echo $Result['Comment'];?>"></textarea>
+                  <input rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1" required value="<?php echo $Result['Name'];?>">
               </div>
               <h4 class="page-header">Link</h4>
               <div class="form-group float-label-control">
