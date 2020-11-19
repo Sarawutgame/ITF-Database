@@ -20,7 +20,7 @@ if (mysqli_connect_errno($conn))
 }
 
 $id = $_GET['id'];
-echo $id
+echo $id;
         
 $query = "SELECT * FROM guestbook WHERE id = '$id' ";
 $Result = mysqli_fetch_array($res);
