@@ -14,7 +14,7 @@ $link = $_POST['link'];
 $id = $Result['ID']
 
 
-$sql = "UPDATE guestbook SET Name='$name' , Comment='$comment', Link='$link' WHERE ID=$id";
+$sql = "UPDATE itflabdata.guestbook SET Name='$name' , Comment='$comment', Link='$link' WHERE ID=$id";
 
 if (mysqli_query($conn, $sql)) {
   echo "<script type='text/javascript'>";
