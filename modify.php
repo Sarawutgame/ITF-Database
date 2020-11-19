@@ -20,7 +20,7 @@ if (mysqli_connect_errno($conn))
 }
 
 $id = $_GET['id'];
-echo $id;
+//echo $id;
 $res = mysqli_query($conn, "SELECT * FROM guestbook WHERE ID = $id");
 $Result = mysqli_fetch_array($res);
 
@@ -30,7 +30,7 @@ $Result = mysqli_fetch_array($res);
   <div class="row">
       <div class="col-sm-8">
           <h4 class="page-header">Name</h4>
-          <form role="form" action = "update.php" method = "post" id="CommentForm">
+          <form role="form" action = "update.php?id=<?php echo $id; ?>" method = "post" id="CommentForm">
               <div class="form-group float-label-control">
                   <label for="">Enter Name Here</label>
                   <input class="form-control" name ="name" id="idName" placeholder="Name" required value="<?php echo $Result['Name'];?>">

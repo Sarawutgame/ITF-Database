@@ -1,5 +1,5 @@
 <?php
-$id=$Result['ID'];
+
 $conn = mysqli_init();
 mysqli_real_connect($conn, 'data-itf.mysql.database.azure.com', 'Gamezanet@data-itf', 'Game5711106', 'itflabdata', 3306);
 if (mysqli_connect_errno($conn))
@@ -7,7 +7,7 @@ if (mysqli_connect_errno($conn))
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 
-
+$id = $_GET['id'];
 $name = $_POST['name'];
 $comment = $_POST['comment'];
 $link = $_POST['link'];
