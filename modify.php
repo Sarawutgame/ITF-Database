@@ -1,32 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Edit Form</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modify</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
-    <body>
-    <?php
-    $id=$Result['ID'];
-    $conn = mysqli_init();
-    mysqli_real_connect($conn, 'data-itf.mysql.database.azure.com', 'Gamezanet@data-itf', 'Game5711106', 'itflabdata', 3306);
-    $res = mysqli_query($conn, "SELECT * FROM guestbook WHERE ID='$id'");
-    $row = mysqli_fetch_array($res)
-    ?>
-    <div class="container">
-    <h2>เเก้ไขข้อมูล</h2>
-    <form action = "update.php?ID=<?php echo $row['ID']; ?>" method = "post" id="CommentForm">
-        <label for="Username">Username :</label>
-          <input type="text" class="form-control" name = "Name" id="idName" value="<?php echo "$row[Name]"; ?>" <br>
-          <label for="Username">Comment :</label>
-          <input type="text" class="form-control" name = "Comment" id="idComment" value="<?php echo "$row[Comment]"; ?>" <br>
-        <label for="Username">Link :</label>
-          <input type="text" class="form-control" name = "Link" id="idLink" value="<?php echo "$row[Link]"; ?>"> <br><br>
-          <input type="submit" id="commentBtn"class="btn btn-outline-warning">
+
+<body>
+<?php
+
+$conn = mysqli_init();
+mysqli_real_connect($conn, 'data-itf.mysql.database.azure.com', 'Gamezanet@data-itf', 'Game5711106', 'itflabdata', 3306);
+if (mysqli_connect_errno($conn))
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+
+$id = $_GET['ID'];
+echo $id;
+        
+$query = "SELECT * FROM guestbook WHERE id = '$id' ";
+$Result = mysqli_fetch_array($res);
+
+?>
+
+<h1>ฟอร์มแก้ไข/ปรับปรุงข้อมูล</h1>
+  <div class="row">
+      <div class="col-sm-8">
+          <h4 class="page-header">Name</h4>
+          <form role="form" action = "update.php" method = "post" id="CommentForm">
+              <div class="form-group float-label-control">
+                  <label for="">Enter Name Here</label>
+                  <input class="form-control" name ="name" id="idName" placeholder="Name">
+              </div>
+              <h4 class="page-header">Comment ^ ^</h4>
+              <div class="form-group float-label-control">
+                  <label for="">Please Comment</label>
+                  <textarea rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1"></textarea>
+              </div>
+              <h4 class="page-header">Link</h4>
+              <div class="form-group float-label-control">
+                  <label for="">Please Insert Link</label>
+                  <input class="form-control" name="link" id="idLink" placeholder="Link" rows="1">
+              </div>
+            <input type="submit" id="btn btn-outline-warning">
+          </form>
+      </div>
     </div>
-      </form>
+  <?php
+  mysqli_close($conn);
+  ?>
 </body>
+</html>
