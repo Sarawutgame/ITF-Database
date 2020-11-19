@@ -11,10 +11,10 @@ if (mysqli_connect_errno($conn))
 $name = $_POST['name'];
 $comment = $_POST['comment'];
 $link = $_POST['link'];
-$id = $Result['ID'];
+$id=$_GET['ID'];
 
 
-$sql = "UPDATE INTO guestbook SET Name='$name' , Comment='$comment', Link='$link' WHERE ID=11";
+$sql = "UPDATE guestbook SET Name='$name' , Comment='$comment', Link='$link' WHERE ID=$id";
 
 if (mysqli_query($conn, $sql)) {
   echo "<script type='text/javascript'>";
