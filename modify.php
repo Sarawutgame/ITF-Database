@@ -38,7 +38,7 @@ $Result = mysqli_fetch_array($res);
               <h4 class="page-header">Comment ^ ^</h4>
               <div class="form-group float-label-control">
                   <label for="">Please Comment</label>
-                  <input rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1" required value="<?php echo $Result['Name'];?>">
+                  <input rows="10" class="form-control" name="comment" id="idComment" placeholder="Comment in there" rows="1" required value="<?php echo $Result['Comment'];?>">
               </div>
               <h4 class="page-header">Link</h4>
               <div class="form-group float-label-control">
