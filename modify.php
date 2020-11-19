@@ -11,7 +11,7 @@
 </head>
     <body>
     <?php
-    $id=$_GET['ID'];
+    $id=$Result['ID'];
     $conn = mysqli_init();
     mysqli_real_connect($conn, 'data-itf.mysql.database.azure.com', 'Gamezanet@data-itf', 'Game5711106', 'itflabdata', 3306);
     $res = mysqli_query($conn, "SELECT * FROM guestbook WHERE ID='$id'");

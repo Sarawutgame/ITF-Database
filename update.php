@@ -1,5 +1,5 @@
 <?php
-$id=$_GET['ID'];
+$id=$Result['ID'];
 $conn = mysqli_init();
 mysqli_real_connect($conn, 'data-itf.mysql.database.azure.com', 'Gamezanet@data-itf', 'Game5711106', 'itflabdata', 3306);
 if (mysqli_connect_errno($conn))
