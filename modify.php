@@ -26,7 +26,7 @@ $Result = mysqli_fetch_array($res);
 
 ?>
 
-<h1>ฟอร์มแก้ไข/ปรับปรุงข้อมูล</h1>
+<h1 face= "Comic Sans MS">Edit</h1>
   <div class="row">
       <div class="col-sm-8">
           <h4 class="page-header">Name</h4>
