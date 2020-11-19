@@ -10,7 +10,7 @@ if (mysqli_connect_errno($conn))
 $id = $_GET['id'];
 
 
-$sql = "DELETE guestbook WHERE ID=$id";
+$sql = "DELETE FROM guestbook WHERE ID=$id";
 
 if (mysqli_query($conn, $sql)) {
   echo "<script type='text/javascript'>";
